@@ -1,0 +1,96 @@
+CSci 1933 Spring 2019 Project 5 - Hash Table Implementation
+
+    You may work alone or with one other person on this project.  If working
+with another person, turn in a single submission with both names and account
+IDs on it.  The project is due on Monday, May 6, at 11:55 p.m. with late
+days of May 7 and 8 accoding to the deductions on the course syllabus.  
+Submit your project on Canvas. 
+
+    This project focuses specifically on hash tables and should not take much 
+time to implement.  You will implement hash table solutions to two common
+situations (general - unknown data, and specific - known data) with the goal 
+of minimizing the number key collisions.  While Java (and other languages) 
+implement some kind of hash table, in this project, you are required to write 
+your own hash table and hash functions.
+
+Assumptions    
+
+    0)  The keys that we will use for this project will all be strings which
+are "tokens" (describe next).
+
+    1)  For this project, a "token" will be defined as any sequence of 
+characters (other than the white space characters: tab, space, newline)
+delimited by one of more while space characters.  For example, the following
+are all tokens:
+
+    -123.34
+    computer
+    and
+    result.
+    &*hello
+    abc)
+    {}
+    (
+    x
+    x,y
+
+    2) Do NOT maintain duplicate entries of a key in your hash table.
+In other words, if a token occurs multiple times, only put it in the
+hash table once.
+
+What To Do
+
+    1.  Reading Tokens.  To make testing of your hash table quick and 
+simple, it is best to start with a way to easily read symbols (or tokens) 
+from a file.  The file TextScan.java has has been provided for you to use 
+(or modify) in order to read tokens from an arbitrary file.  The main() 
+driver method in TextScan.java reads (and displays) all tokens found in 
+the file specified on the command line when running TextScan.  Try it on 
+some arbitrary file--for example, itself.  You may borrow TextScan.java 
+and modify it to meet the requirements of this project, but if you do, 
+be sure to properly credit the source within your program.  
+
+    2.  Build a Hash Table.  Build a hash table of an "optimal" length 
+that you choose (around 100, but not more than 150).  The hash table 
+implementation should use "chaining" (as discussed in lecture) to handle 
+collided elements.
+
+    3.  Display the Hash Table.  It will be necessary to print out the 
+contents of your hash table so that we can tell how well your hash functions
+are working.  Write a method:
+
+    public void display() 
+
+that will display each location in your hash table along with the 
+number of keys that "hashed" to that location.  For longer hash tables,
+it is best to display the lengths of the longest and shortest chains.
+
+    4.  A General Hash Table.  Write several hash functions: int hash(key)
+that attempt to distribute tokens "evenly" across the hash table.  Sample 
+files have been provided for you to test your hash table and hash functions.  
+(See proverbs, canterbury, gettysburg, that_bad.)  You may also use files
+of your own.  Note that the hash table does not always need to grow to
+handle larger files, but the hash function should distribute the collided
+values evenly across the hash table.  Once you have a good hash function,
+keep it to yourself!  A good hash function is the key to an effective hash 
+table, and it can give you a competitive performance edge.  However, in 
+your program comments you should explain how your hash function works.
+
+    5.  A Specific Hash Table.  In some cases, the data that will go into
+the hash table is known in advance.  One such example of this is the 
+reserved words for a programming language.  In the file "keywords" are 
+the 50 reserved keywords in the Java programming language.  With some 
+effort, it should be possible to map all the keywords (without collision) 
+to a hash table.  Try to do this.  Again, keep your hash function to 
+yourself, but explain how it works in your program comments.  
+    What is the smallest your hash table can be without having any 
+collisions?
+
+What to turn in
+
+    Implement all five sections above in Java.  Show the output from each 
+of the last two sections along with your Java code.  Run tests using the
+text files provided.  (You may also run additional tests using other files.
+But, additional tests are not required.)  Include good comments within 
+your code.  Include a short README file with other comments and clarifications
+that may be helpful in grading.
