@@ -5,6 +5,8 @@
 // Displays each token found to the screen
 // Code may be used in part for Project 5 with proper citing.
 
+// COLE WAS HERE
+
 import java.util.Scanner;
 import java.io.*;
 
